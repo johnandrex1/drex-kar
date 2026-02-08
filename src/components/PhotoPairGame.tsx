@@ -85,8 +85,7 @@ export default function PhotoPairGame({
 
   // Check if game is won
   useEffect(() => {
-    console.log(matched.length);
-    if (matched.length >= 1) {
+    if (matched.length >= 5) {
       handleShowProposal();
     }
   }, [matched, handleShowProposal]);
