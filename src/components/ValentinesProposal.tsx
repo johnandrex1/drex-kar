@@ -178,7 +178,7 @@ export default function ValentinesProposal() {
             Thank you for accepting, I love you! 💕
             <p className="text-sm mt-4">For more information, write me!!! 💌</p>
             <Image
-              src="/hamster_jumping.gif"
+              src="/coycoy.gif"
               alt="Hamster Feliz"
               width={200}
               height={200}
