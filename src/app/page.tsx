@@ -28,12 +28,10 @@ export default function Home() {
             initial={{ opacity: 1 }}
             animate={{ opacity: isTransitioning ? 0 : 1 }}
             transition={{ duration: ANIM_DURATION }}
-            className="flex flex-col items-center"
+            className="relative w-full min-h-screen flex flex-col items-center justify-center"
           >
             <PhotoPairGame handleShowProposal={handleShowProposal} />
-            <div className="mt-4 md:mt-0">
-              <TextFooter />
-            </div>
+            <TextFooter />
           </motion.div>
         ) : (
           <motion.div

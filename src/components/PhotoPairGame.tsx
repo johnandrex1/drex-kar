@@ -29,8 +29,6 @@ const images = [
 // Create 18 pairs of images (36 images in total)
 const imagePairs = images.flatMap((image) => [image, image]);
 
-console.log(images);
-
 const shuffleArray = (array: string[]) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -92,20 +90,6 @@ export default function PhotoPairGame({
 
   return (
     <div className="grid grid-cols-9 gap-1 lg:gap-2 max-w-[95vw] mx-auto place-items-center">
-      {/* Image preload */}
-      <div className="hidden">
-        {images.map((image, i) => (
-          <Image
-            key={i}
-            src={image}
-            alt={`Image ${i + 1}`}
-            fill
-            className="object-cover"
-            priority
-          />
-        ))}
-      </div>
-
       {heartLayout.flat().map((index, i) =>
         index !== null ? (
           <motion.div
@@ -118,7 +102,7 @@ export default function PhotoPairGame({
             {/* Back of the card */}
             {!selected.includes(index) && !matched.includes(index) && (
               <motion.div
-                className="w-full h-full bg-gray-300 rounded-sm lg:rounded-md absolute z-10"
+                className="w-full h-full bg-gray-300 border border-black rounded-sm lg:rounded-md absolute z-10"
                 initial={{ rotateY: 0 }}
                 animate={{
                   rotateY:

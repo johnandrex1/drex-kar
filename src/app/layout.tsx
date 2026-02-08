@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   ],
 };
 
+const isProd = process.env.NODE_ENV === "production";
+const baseUrl = "https://johnandrex1.github.io/drex-kar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {isProd && <base href={`${baseUrl}/`} />}
+      </head>
       <body>{children}</body>
     </html>
   );
